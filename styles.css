@@ -1,0 +1,77 @@
+body {
+        background-color: white;
+        font-family: Arial, sans-serif;
+        text-align: center;
+      }
+      canvas {
+        border: 2px solid black;
+        margin-top: 20px;
+      }
+      form {
+        margin-bottom: 20px;
+      }
+      select,
+      input,
+      button {
+        margin: 5px;
+        padding: 8px;
+        font-size: 14px;
+      }
+      /* Center the container */
+      .table-container {
+        display: flex;
+        justify-content: center;
+        margin-top: 30px;
+      }
+
+      /* Style the table */
+      #statsTable {
+        border-collapse: collapse;
+        width: 90%;
+        max-width: 1000px;
+        font-family: Arial, sans-serif;
+        background-color: #fff;
+        box-shadow: 0 0 8px rgba(0, 0, 0, 0.1);
+      }
+
+      /* Header row */
+      #statsTable thead tr {
+        background-color: #007bff;
+        color: white;
+        text-align: left;
+      }
+
+      /* Header and cell spacing */
+      #statsTable th,
+      #statsTable td {
+        padding: 10px 15px;
+        border: 1px solid #ddd;
+      }
+
+      /* Alternate row color */
+      #statsTable tbody tr:nth-child(even) {
+        background-color: #f9f9f9;
+      }
+
+      /* Action buttons */
+      #statsTable button {
+        margin: 0 5px;
+        padding: 5px 10px;
+        font-size: 0.9rem;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+      }
+
+      #statsTable button:hover {
+        opacity: 0.85;
+      }
+
+      #statsTable button:nth-child(1) {
+        background-color: #ffc107; /* Edit - Yellow */
+      }
+
+      #statsTable button:nth-child(2) {
+        background-color: #dc3545; /* Delete - Red */
+        color: white;
+      }

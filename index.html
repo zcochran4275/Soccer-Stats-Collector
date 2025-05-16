@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Stat Collector</title>
+    <link rel="stylesheet" href="styles.css">
+    <script type="module" src="main.js"></script>
+  </head>
+  <body>
+    <h1>Stat Collector</h1>
+
+    <form id="statForm">
+      <input
+        type="text"
+        id="game"
+        name="game"
+        placeholder="Enter game name"
+        required
+      />
+
+      <select id="event">
+        <option value="">Select Event</option>
+        <option value="Pass">Pass</option>
+        <option value="Shot">Shot</option>
+        <option value="Tackle">Tackle</option>
+        <option value="Save">Save</option>
+        <option value="Throw-in">Throw-in</option>
+      </select>
+
+      <select id="result">
+        <option value="">Select Result</option>
+        <option value="Successful">Successful</option>
+        <option value="Unsuccessful">Unsuccessful</option>
+      </select>
+
+      <select id="team">
+        <option value="">Select Team</option>
+        <option value="UCSD">UCSD</option>
+        <option value="Opponent">Opponent</option>
+      </select>
+
+      <br />
+      <button type="button" id="submitBtn">Submit Stat</button>
+      <button type="button" id="downloadBtn">Download CSV</button>
+      <button type="button" id="closeBtn">Close</button>
+    </form>
+
+    <canvas id="pitchCanvas" width="720" height="480"></canvas>
+    <h2>Submitted Stats</h2>
+    <div class="table-container">
+      <table id="statsTable" border="1" cellpadding="5" cellspacing="0">
+        <thead>
+          <tr>
+            <th>Game</th>
+            <th>Event</th>
+            <th>Result</th>
+            <th>Team</th>
+            <th>Start Position</th>
+            <th>End Position</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+        <tbody></tbody>
+      </table>
+    </div>
+  </body>
+</html>

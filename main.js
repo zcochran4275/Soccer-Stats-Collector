@@ -227,7 +227,7 @@ function loadFromLocalStorage() {
     collectedStats.forEach((data, i) => addRowToTable(data, i));
   }
 }
-
+ 
 function addRowToTable(data, index) {
   const tableBody = document.querySelector("#statsTable tbody");
   const newRow = document.createElement("tr");

@@ -193,6 +193,8 @@ function editRow(index) {
   document.getElementById("event").value = data.event;
   document.getElementById("result").value = data.result;
   document.getElementById("team").value = data.team;
+  document.getElementById("player").value = data.player;
+
   startPos = data.start_position;
   endPos = data.end_position;
   editMode = true;
@@ -238,6 +240,7 @@ function addRowToTable(data, index) {
     <td>${data.event}</td>
     <td>${data.result}</td>
     <td>${data.team}</td>
+    <td>${data.player}</td>
     <td>[${data.start_position.map((p) => p.toFixed(1)).join(", ")}]</td>
     <td>[${data.end_position.map((p) => p.toFixed(1)).join(", ")}]</td>
     <td>
@@ -256,6 +259,7 @@ document.getElementById("submitBtn").addEventListener("click", () => {
   const event = document.getElementById("event").value;
   const result = document.getElementById("result").value;
   const team = document.getElementById("team").value;
+  const player = document.getElementById("player").value;
 
   if (startPos[0] === -1 || endPos[0] === -1) {
     alert("Please click two points on the pitch.");
@@ -267,6 +271,7 @@ document.getElementById("submitBtn").addEventListener("click", () => {
     event,
     result,
     team,
+    player,
     start_position: startPos,
     end_position: endPos,
   };
@@ -299,12 +304,13 @@ document.getElementById("downloadBtn").addEventListener("click", () => {
     return;
   }
 
-  const headers = ["Game", "Event", "Result", "Team", "Start Pos", "End Pos"];
+  const headers = ["Game", "Event", "Result", "Team","Player", "Start Pos", "End Pos"];
   const rows = collectedStats.map((stat) => [
     stat.game,
     stat.event,
     stat.result,
     stat.team,
+    stat.player,
     `"${stat.start_position.join(",")}"`,
     `"${stat.end_position.join(",")}"`,
   ]);
